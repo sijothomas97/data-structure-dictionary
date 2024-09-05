@@ -1,0 +1,17 @@
+C:\Users\LaptopUser\Downloads\Task B\TaskB\bin\Debug\net6.0-windows\TaskB.exe
+C:\Users\LaptopUser\Downloads\Task B\TaskB\bin\Debug\net6.0-windows\TaskB.deps.json
+C:\Users\LaptopUser\Downloads\Task B\TaskB\bin\Debug\net6.0-windows\TaskB.runtimeconfig.json
+C:\Users\LaptopUser\Downloads\Task B\TaskB\bin\Debug\net6.0-windows\TaskB.dll
+C:\Users\LaptopUser\Downloads\Task B\TaskB\bin\Debug\net6.0-windows\TaskB.pdb
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.csproj.AssemblyReference.cache
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.Form1.resources
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.csproj.GenerateResource.cache
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.AssemblyInfoInputs.cache
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.AssemblyInfo.cs
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.csproj.CoreCompileInputs.cache
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.dll
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\refint\TaskB.dll
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.pdb
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\TaskB.genruntimeconfig.cache
+C:\Users\LaptopUser\Downloads\Task B\TaskB\obj\Debug\net6.0-windows\ref\TaskB.dll
