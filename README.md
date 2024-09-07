@@ -31,7 +31,7 @@ The application is implemented as a **Console Application** or a **Windows Forms
 1. **Clone or Download the Project**:
    - Clone the repository:
      ```bash
-     git clone https://github.com/your-username/student-enrolment-management.git
+     git clone https://github.com/your-username/student-enrolment-dictionary.git
      ```
    - Or download the ZIP file and extract it to a folder on your computer.
 
