@@ -1,0 +1,38 @@
+# Default: API only, persisting to SQLite in a named volume.
+#   docker compose up --build
+#
+# With PostgreSQL instead of SQLite:
+#   DATABASE_PROVIDER=Postgres \
+#   CONNECTION_STRING="Host=postgres;Database=students;Username=students;Password=students" \
+#   docker compose --profile postgres up --build
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      Database__Provider: ${DATABASE_PROVIDER:-Sqlite}
+      ConnectionStrings__Default: ${CONNECTION_STRING:-Data Source=/data/students.db}
+    volumes:
+      - student-data:/data
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    profiles: ["postgres"]
+    environment:
+      POSTGRES_DB: students
+      POSTGRES_USER: students
+      POSTGRES_PASSWORD: students
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U students -d students"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  student-data:
+  pg-data:

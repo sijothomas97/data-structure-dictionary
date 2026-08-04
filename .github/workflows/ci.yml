@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore StudentManager.sln
+
+      - name: Build
+        run: dotnet build StudentManager.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test StudentManager.sln --configuration Release --no-build --verbosity normal
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t student-manager-api:${{ github.sha }} .
+
+      - name: Smoke test image
+        run: |
+          docker run -d --name smoke -p 8080:8080 student-manager-api:${{ github.sha }}
+          for i in $(seq 1 20); do
+            if curl -fsS http://localhost:8080/health; then ok=1; break; fi
+            sleep 1
+          done
+          [ "${ok:-0}" = "1" ] || { docker logs smoke; exit 1; }
+          docker rm -f smoke
