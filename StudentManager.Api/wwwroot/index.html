@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Student Manager</h1>
+    <p class="subtitle">Enrolment records &mdash; backed by the Student Manager API</p>
+  </header>
+
+  <main>
+    <section class="card" id="form-card">
+      <h2 id="form-title">Add student</h2>
+      <form id="student-form">
+        <div class="field">
+          <label for="student-id">Student ID</label>
+          <input id="student-id" name="id" type="text" required autocomplete="off" placeholder="e.g. S001">
+        </div>
+        <div class="field">
+          <label for="student-name">Name</label>
+          <input id="student-name" name="name" type="text" required autocomplete="off" placeholder="e.g. Ada Lovelace">
+        </div>
+        <div class="field checkbox-field">
+          <label>
+            <input id="student-enrolled" name="enrolled" type="checkbox">
+            Enrolment completed
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" id="save-btn" class="primary">Add</button>
+          <button type="button" id="cancel-btn" class="secondary hidden">Cancel</button>
+        </div>
+      </form>
+      <p id="form-error" class="error hidden"></p>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <h2>Students</h2>
+        <div class="search">
+          <input id="search-input" type="text" placeholder="Search by exact name" autocomplete="off">
+          <button id="search-btn" class="secondary">Search</button>
+          <button id="clear-search-btn" class="secondary hidden">Clear</button>
+        </div>
+      </div>
+      <p id="list-status" class="muted"></p>
+      <div class="table-wrap">
+        <table id="student-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Enrolment</th>
+              <th class="actions-col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="student-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
